@@ -1,11 +1,161 @@
-/* 
+* {
+  box-sizing: border-box;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+body {
+  margin: 0;
+  font-family: -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-*/
+.todo-container {
+  min-height: 100vh;
+  background-color: #f0fdf4; /* green-50 */
+  padding: 2rem 0;
+}
+
+.todo-card {
+  max-width: 28rem; /* max-w-md */
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.todo-header {
+  background-color: #f3f4f6; /* gray-100 */
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.todo-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937; /* gray-800 */
+  margin: 0;
+}
+
+.todo-input-section {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.todo-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1f2937;
+  font-style: italic;
+}
+
+.todo-input::placeholder {
+  color: #9ca3af; /* gray-400 */
+  font-style: italic;
+}
+
+.todo-list {
+  border: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.todo-item:hover {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-text {
+  flex: 1;
+  color: #1f2937; /* gray-800 */
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.delete-button {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-item:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  background-color: #fee2e2; /* red-100 */
+}
+
+.delete-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ef4444; /* red-500 */
+}
+
+.todo-footer {
+  padding: 0.75rem 1.5rem;
+  background-color: #f9fafb; /* gray-50 */
+  font-size: 0.875rem;
+  color: #4b5563; /* gray-600 */
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.todo-counter {
+  font-weight: 500;
+}
+
+.empty-state {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+}
+
+.instructions {
+  max-width: 28rem;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #4b5563; /* gray-600 */
+}
+
+.instructions p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .todo-container {
+    padding: 1rem;
+  }
+  
+  .todo-card {
+    margin: 0 1rem;
+  }
+  
+  .instructions {
+    margin: 1rem;
+  }
+}
